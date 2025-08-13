@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Generated Question Paper</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="paper-container">
+        <h2>Generated Question Paper</h2>
+
+        <h3>Part A – (2 Marks Each)</h3>
+        <ol>
+            {% for q in part_a %}
+                <li>{{ q['QUESTION BANK'] }}</li>
+            {% endfor %}
+        </ol>
+
+        <h3>Part B – (16 Marks Each)</h3>
+        <ol>
+            {% for item in part_b %}
+                <li>
+                    {{ item.number }} (a) {{ item.a }}<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;(b) {{ item.b }}
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+</body>
+</html>

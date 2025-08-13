@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="paper-container">
+        <h2>⚠️ Unable to Generate Question Paper</h2>
+        <p>The following COs do not have 2 questions from different PARTs:</p>
+
+        {% if failed_a %}
+            <h3>Part A – 2 Marks</h3>
+            <ul>
+                {% for co, mark in failed_a %}
+                    <li>CO{{ co }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        {% if failed_b %}
+            <h3>Part B – 16 Marks</h3>
+            <ul>
+                {% for co, mark in failed_b %}
+                    <li>CO{{ co }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <a href="/">🔙 Try Again with a better question bank</a>
+    </div>
+</body>
+</html>

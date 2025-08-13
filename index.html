@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question Paper Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="upload-card">
+        <h2>Question Paper Generator</h2>
+        <form method="POST" action="{{ url_for('index') }}" enctype="multipart/form-data">
+            <label>Select Excel File:</label><br>
+            <input type="file" name="file" required><br><br>
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+</body>
+</html>
